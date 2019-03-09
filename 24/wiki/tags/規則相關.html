@@ -20,15 +20,14 @@
 <body><header class="site-header">
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
+      <button id="burger" class="navbar-burger burger__button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a class="navbar-item" rel="author" href="/24/">
         <img class="navbar-logo" src="https://yt3.ggpht.com/a-/AAuE7mAzF0YlAQv0YQxq35osxnWg0WGqpKzW33Aa=s288-mo-c-c0xffffffff-rj-k-no" width="30" height="30">
         <span>魔法氣泡中文百科</span>
-      </a>
-      <a role="button" class="navbar-burger burger" aria-label="menu"
-      aria-expanded="false" data-target="navbar-items">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
       </a>
     </div>
     <div id="navbar-items" class="navbar-menu">
@@ -174,20 +173,25 @@
           障礙氣泡量公式
         </a></li></ul></li></ul></li></ul></div>
   </div>
-  <div id="arrow" class="sidebar__button">
-    <div class="sidebar__arrow"></div>
-  </div>
 </aside>
 
 <script>
   (function() { 
-    document.getElementById('arrow').addEventListener('click', function(e){
+    document.getElementById('burger').addEventListener('click', function(e){
       document.getElementById('sidebar').classList.toggle('sidebar--active');
+      document.getElementById('burger').classList.toggle('is-active');
     });
   })();
 </script><article class="color-theme-1 wiki__post container js-Pjax">
   <div class="markdown-section">
-    <h1>標籤：規則相關</h1>
+    <h1>標籤：規則相關</h1><div class="tagsearch__box box">
+    <a href="/wiki/D_rules/a_scoreformula">
+      障礙氣泡量公式
+    </a>
+    <p>
+      
+    </p>
+  </div>
   </div>
 </article>
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script>
@@ -201,6 +205,8 @@
       }
     });
     function ReloadMath() {
+      document.getElementById('sidebar').classList.toggle('sidebar--active');
+      document.getElementById('burger').classList.toggle('is-active');
       MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     }
     document.addEventListener("pjax:success", ReloadMath);
