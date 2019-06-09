@@ -249,6 +249,8 @@
         PuyoSimulatorEmbed.simulatorify(document.getElementsByClassName('puyo-simulator'))
     }
 
+    TransformToSimulator();
+
     document.addEventListener("pjax:success", ReloadMath);
     document.addEventListener("pjax:success", TransformToSimulator);
   })();
